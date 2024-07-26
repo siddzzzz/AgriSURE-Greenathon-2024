@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriTheCulture</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f5e9;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://www.transparenttextures.com/patterns/grass.png');
+            background-size: cover;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffffcc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+            color: #388e3c;
+        }
+        label {
+            font-size: 1.1em;
+            color: #2e7d32;
+            display: block;
+            margin-bottom: 8px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #c8e6c9;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        button {
+            background-color: #66bb6a;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #43a047;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AgriTheCulture</h1>
+        <form id="agriForm">
+            <label for="geoLocation">Enter the Geo Location</label>
+            <select id="geoLocation" name="geoLocation" required>
+                <option value="">Select State</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                <option value="Assam">Assam</option>
+                <option value="Bihar">Bihar</option>
+                <option value="Chhattisgarh">Chhattisgarh</option>
+                <option value="Goa">Goa</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Haryana">Haryana</option>
+                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                <option value="Jharkhand">Jharkhand</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Manipur">Manipur</option>
+                <option value="Meghalaya">Meghalaya</option>
+                <option value="Mizoram">Mizoram</option>
+                <option value="Nagaland">Nagaland</option>
+                <option value="Odisha">Odisha</option>
+                <option value="Punjab">Punjab</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Sikkim">Sikkim</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Tripura">Tripura</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="Uttarakhand">Uttarakhand</option>
+                <option value="West Bengal">West Bengal</option>
+                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                <option value="Chandigarh">Chandigarh</option>
+                <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+                <option value="Daman and Diu">Daman and Diu</option>
+                <option value="Lakshadweep">Lakshadweep</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Puducherry">Puducherry</option>
+            </select>
+
+            <label for="farmSize">Farm Size (in acres)</label>
+            <input type="number" id="farmSize" name="farmSize" required>
+
+            <label for="phosphorous">Phosphorous (P)</label>
+            <input type="number" id="phosphorous" name="phosphorous" required>
+
+            <label for="nitrogen">Nitrogen (N)</label>
+            <input type="number" id="nitrogen" name="nitrogen" required>
+
+            <label for="potassium">Potassium (K)</label>
+            <input type="number" id="potassium" name="potassium" required>
+
+            <label for="soilPh">Soil pH</label>
+            <input type="number" id="soilPh" name="soilPh" step="0.01" required>
+
+            <button type="submit">Submit</button>
+        </form>
+        <p id="output1" style="text-align: center; font-size: 1.2em; color: #388e3c;"></p>
+        <p id="output2" style="text-align: center; font-size: 1.2em; color: #388e3c;"></p>
+    </div>
+
+    <script>
+        document.getElementById('agriForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Collect form data
+            const geoLocation = document.getElementById('geoLocation').value;
+            const farmSize = document.getElementById('farmSize').value;
+            const phosphorous = document.getElementById('phosphorous').value;
+            const nitrogen = document.getElementById('nitrogen').value;
+            const potassium = document.getElementById('potassium').value;
+            const soilPh = document.getElementById('soilPh').value;
+
+            // Simple recommendation logic (to be replaced with actual logic)
+            const recommendedCrop = "Coconut"; // Placeholder
+            const predictedPrice = "Tewnty Thousand per Quintal"
+            // Display the output
+            document.getElementById('output1').textContent = "RECOMMENDED CROP: " + recommendedCrop;
+            document.getElementById('output2').textContent = "Predicted Price : " + predictedPrice ;
+        });
+    </script>
+</body>
+</html>
